@@ -7,26 +7,47 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Navigation Bar -->
   <header>
     <nav>
       <div class="logo">G Stationary</div>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="products.html">Products</a></li>
-        <li><a href="customize.html">Customize</a></li>
+        <li class="dropdown">
+          <a href="customize.html">Customize ▼</a>
+          <ul class="dropdown-menu">
+            <li><a href="custom-notebooks.html">Notebooks</a></li>
+            <li><a href="custom-pens.html">Pens</a></li>
+          </ul>
+        </li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <section id="home" class="hero">
-    <h1>Welcome to G Stationary</h1>
-    <p>Your one-stop shop for all stationery needs at GITAM!</p>
-    <a href="products.html" class="btn">Explore Products</a>
+    <h1 class="animate-text">Welcome to G Stationary</h1>
+    <p class="animate-text">Your one-stop shop for all stationery needs at GITAM!</p>
+    <a href="products.html" class="btn animate-btn">Explore Products</a>
   </section>
 
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top">↑</button>
+
+  <!-- Footer -->
   <footer>
     <p>© 2025 G Stationary. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+      <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+      <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+    </div>
   </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
+
