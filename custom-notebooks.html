@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customize Notebooks</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <div class="logo">G Stationary</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="customize.html">Customize</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Title -->
+  <section class="page-title">
+    <h1>Customize Your Notebook</h1>
+    <p>Create a personalized notebook with your own designs and preferences.</p>
+  </section>
+
+  <!-- Notebook Customization Form -->
+  <section class="customization-form">
+    <form id="notebookForm">
+      <!-- Cover Design -->
+      <div class="form-group">
+        <label for="coverDesign">Choose Cover Design:</label>
+        <select id="coverDesign" required>
+          <option value="" disabled selected>Select a design</option>
+          <option value="Abstract">Abstract</option>
+          <option value="Nature">Nature</option>
+          <option value="Minimalist">Minimalist</option>
+          <option value="Custom">Custom Design (Upload)</option>
+        </select>
+      </div>
+
+      <!-- Notebook Size -->
+      <div class="form-group">
+        <label for="notebookSize">Notebook Size:</label>
+        <select id="notebookSize" required>
+          <option value="" disabled selected>Select size</option>
+          <option value="A5">A5 (Small)</option>
+          <option value="A4">A4 (Medium)</option>
+          <option value="A3">A3 (Large)</option>
+        </select>
+      </div>
+
+      <!-- Text on Cover -->
+      <div class="form-group">
+        <label for="coverText">Text on Cover:</label>
+        <input type="text" id="coverText" placeholder="Your Text Here" maxlength="30">
+        <p class="helper-text">Max 30 characters.</p>
+      </div>
+
+      <!-- Upload Custom Design -->
+      <div class="form-group" id="uploadSection" style="display: none;">
+        <label for="customDesign">Upload Custom Design:</label>
+        <input type="file" id="customDesign" accept="image/*">
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn">Submit Customization</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 G Stationary. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
