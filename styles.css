@@ -148,28 +148,58 @@ nav.dark-mode {
 .hero.dark-mode {
   background: linear-gradient(to right, #1f1f1f, #333);
 }
-// Display Upload Section for Custom Design
-const coverDesign = document.getElementById("coverDesign");
-const uploadSection = document.getElementById("uploadSection");
+/* Page Title Section */
+.page-title {
+  text-align: center;
+  background-color: #003366;
+  color: white;
+  padding: 20px;
+}
 
-coverDesign.addEventListener("change", function () {
-  if (this.value === "Custom") {
-    uploadSection.style.display = "block";
-  } else {
-    uploadSection.style.display = "none";
-  }
-});
+/* Form Section */
+.customization-form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-// Handle Form Submission
-const notebookForm = document.getElementById("notebookForm");
+.form-group {
+  margin-bottom: 15px;
+}
 
-notebookForm.addEventListener("submit", function (event) {
-  event.preventDefault();
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
 
-  const selectedDesign = coverDesign.value;
-  const notebookSize = document.getElementById("notebookSize").value;
-  const coverText = document.getElementById("coverText").value;
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
 
-  alert(`Notebook Customized!\nDesign: ${selectedDesign}\nSize: ${notebookSize}\nText: ${coverText}`);
-});
+.helper-text {
+  font-size: 12px;
+  color: gray;
+}
+
+.btn {
+  background-color: #003366;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #00509e;
+}
+
 
