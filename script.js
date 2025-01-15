@@ -49,3 +49,28 @@ notebookForm.addEventListener("submit", function (event) {
 
   alert(`Notebook Customized!\nDesign: ${selectedDesign}\nSize: ${notebookSize}\nText: ${coverText}`);
 });
+// Display Upload Section for Custom Design
+const coverDesign = document.getElementById("coverDesign");
+const uploadSection = document.getElementById("uploadSection");
+
+coverDesign.addEventListener("change", function () {
+  if (this.value === "Custom") {
+    uploadSection.style.display = "block";
+  } else {
+    uploadSection.style.display = "none";
+  }
+});
+
+// Handle Form Submission
+const notebookForm = document.getElementById("notebookForm");
+
+notebookForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const selectedDesign = coverDesign.value;
+  const notebookSize = document.getElementById("notebookSize").value;
+  const coverText = document.getElementById("coverText").value;
+
+  alert(`Notebook Customized!\nDesign: ${selectedDesign}\nSize: ${notebookSize}\nText: ${coverText}`);
+});
+
