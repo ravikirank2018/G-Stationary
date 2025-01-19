@@ -73,4 +73,89 @@ notebookForm.addEventListener("submit", function (event) {
 
   alert(`Notebook Customized!\nDesign: ${selectedDesign}\nSize: ${notebookSize}\nText: ${coverText}`);
 });
+// Product data
+const products = [
+  { id: 1, name: "Notebook", price: 100, image: "notebook.jpg" },
+  { id: 2, name: "Pen", price: 20, image: "pen.jpg" },
+  { id: 3, name: "Pencil", price: 10, image: "pencil.jpg" },
+];
+
+// Initialize cart from localStorage
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+// Render products
+function renderProducts() {
+  const productContainer = document.getElementById("productContainer");
+  products.forEach(product => {
+    const productCard = `
+      <div class="col-md-4">
+        <div class="card">
+          <img src="${product.image}" class="card-img-top" alt="${product.name}">
+          <div class="card-body">
+            <h5 class="card-title">${product.name}</h5>
+            <p class="card-text">Price: ₹${product.price}</p>
+            <button class="btn btn-primary w-100" onclick="addToCart(${product.id})">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    `;
+    productContainer.innerHTML += productCard;
+  });
+}
+
+// Add to cart
+function addToCart(productId) {
+  const product = products.find(p => p.id === productId);
+  const existingProduct = cart.find(item => item.id === productId);
+
+  if (existingProduct) {
+    existingProduct.quantity += 1;
+  } else {
+    cart.push({ ...product, quantity: 1 });
+  }
+
+  updateCart();
+  alert(`${product.name} has been added to your cart!`);
+}
+
+// Update cart display
+function updateCart() {
+  const cartItems = document.getElementById("cartItems");
+  const totalPrice = document.getElementById("totalPrice");
+
+  cartItems.innerHTML = "";
+  let total = 0;
+
+  cart.forEach(item => {
+    total += item.price * item.quantity;
+    const cartItem = `
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        ${item.name} (₹${item.price} x ${item.quantity})
+        <button class="btn btn-sm btn-danger" onclick="removeFromCart(${item.id})">Remove</button>
+      </li>
+    `;
+    cartItems.innerHTML += cartItem;
+  });
+
+  totalPrice.textContent = `Total: ₹${total}`;
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// Remove from cart
+function removeFromCart(productId) {
+  cart = cart.filter(item => item.id !== productId);
+  updateCart();
+}
+
+// Clear cart
+function clearCart() {
+  cart = [];
+  updateCart();
+}
+
+// Initialize
+document.addEventListener("DOMContentLoaded", () => {
+  renderProducts();
+  updateCart();
+});
 
