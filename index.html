@@ -4,36 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>G Stationary - Home</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container">
-        <a class="navbar-brand" href="#">G Stationary</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-            <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
-            <li class="nav-item"><a href="customize.html" class="nav-link">Customize</a></li>
-            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-          </ul>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">G Stationary</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="customize.html">Customize</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+        </ul>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
   <!-- Hero Section -->
-  <section class="bg-primary text-white text-center py-5 hero">
+  <section class="bg-primary text-white text-center py-5">
     <div class="container">
-      <h1 class="display-4 fade-in">Welcome to G Stationary</h1>
-      <p class="lead fade-in-delay">Your one-stop shop for all stationery needs at GITAM!</p>
-      <a href="products.html" class="btn btn-light btn-lg scale-on-hover">Explore Products</a>
+      <h1>Welcome to G Stationary</h1>
+      <p>Your one-stop shop for all stationery needs at GITAM!</p>
+      <a href="products.html" class="btn btn-light btn-lg">Explore Products</a>
     </div>
   </section>
 
@@ -42,32 +39,35 @@
     <h2 class="text-center mb-4">Featured Products</h2>
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="card hover-shadow">
+        <div class="card">
           <img src="notebook.jpg" class="card-img-top" alt="Notebook">
-          <div class="card-body">
+          <div class="card-body text-center">
             <h5 class="card-title">Notebook</h5>
-            <p class="card-text">Durable notebooks for your daily needs. Price: ₹100</p>
-            <a href="products.html" class="btn btn-primary w-100 scale-on-hover">View More</a>
+            <p class="card-text">Durable notebooks for your daily needs.</p>
+            <p class="fw-bold">Price: ₹100</p>
+            <a href="products.html" class="btn btn-primary w-100">View More</a>
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card hover-shadow">
+        <div class="card">
           <img src="pen.jpg" class="card-img-top" alt="Pen">
-          <div class="card-body">
+          <div class="card-body text-center">
             <h5 class="card-title">Pen</h5>
-            <p class="card-text">Smooth writing pens for every occasion. Price: ₹20</p>
-            <a href="products.html" class="btn btn-primary w-100 scale-on-hover">View More</a>
+            <p class="card-text">Smooth writing pens for every occasion.</p>
+            <p class="fw-bold">Price: ₹20</p>
+            <a href="products.html" class="btn btn-primary w-100">View More</a>
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card hover-shadow">
+        <div class="card">
           <img src="pencil.jpg" class="card-img-top" alt="Pencil">
-          <div class="card-body">
+          <div class="card-body text-center">
             <h5 class="card-title">Pencil</h5>
-            <p class="card-text">High-quality pencils for precision. Price: ₹10</p>
-            <a href="products.html" class="btn btn-primary w-100 scale-on-hover">View More</a>
+            <p class="card-text">High-quality pencils for precision.</p>
+            <p class="fw-bold">Price: ₹10</p>
+            <a href="products.html" class="btn btn-primary w-100">View More</a>
           </div>
         </div>
       </div>
@@ -76,14 +76,11 @@
 
   <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3">
-    <div class="container">
-      <p>© 2025 G Stationary. All rights reserved.</p>
-    </div>
+    &copy; 2025 G Stationary. All rights reserved.
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
 
 
