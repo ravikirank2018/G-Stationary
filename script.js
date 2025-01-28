@@ -183,4 +183,72 @@ notebookForm.addEventListener("submit", function (event) {
 
   alert(`Notebook Customized!\nDesign: ${selectedDesign}\nSize: ${notebookSize}\nText: ${coverText}\nQuantity: ${quantity}`);
 });
+// Product Data
+const products = [
+    { id: 1, name: "Notebook", price: 100, img: "notebook.jpg" },
+    { id: 2, name: "Pen", price: 20, img: "pen.jpeg" },
+    { id: 3, name: "Pencil", price: 10, img: "Pencil.jpg" }
+];
+
+// Load products dynamically
+const productList = document.getElementById("product-list");
+if (productList) {
+    products.forEach(product => {
+        productList.innerHTML += `
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="${product.img}" class="card-img-top">
+                    <div class="card-body">
+                        <h5>${product.name}</h5>
+                        <p>₹${product.price}</p>
+                        <button class="btn btn-primary" onclick="addToCart(${product.id})">Add to Cart</button>
+                    </div>
+                </div>
+            </div>`;
+    });
+}
+
+// Add to Cart
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+function addToCart(id) {
+    let item = cart.find(product => product.id === id);
+    if (item) {
+        item.qty++;
+    } else {
+        let product = products.find(p => p.id === id);
+        cart.push({ ...product, qty: 1 });
+    }
+    updateCart();
+}
+
+// Update Cart UI
+function updateCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    document.getElementById("cart-count").innerText = cart.reduce((sum, p) => sum + p.qty, 0);
+}
+
+// Render Cart Items
+const cartItems = document.getElementById("cart-items");
+if (cartItems) {
+    cart.forEach(item => {
+        cartItems.innerHTML += `
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                ${item.name} - ₹${item.price} x ${item.qty}
+                <button class="btn btn-danger btn-sm" onclick="removeFromCart(${item.id})">Remove</button>
+            </li>`;
+    });
+
+    document.getElementById("cart-total").innerText = cart.reduce((sum, p) => sum + (p.price * p.qty), 0);
+}
+
+// Remove from Cart
+function removeFromCart(id) {
+    cart = cart.filter(item => item.id !== id);
+    updateCart();
+    location.reload();
+}
+
+// Initial Update
+updateCart();
+
 
